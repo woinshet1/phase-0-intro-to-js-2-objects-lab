@@ -1,9 +1,22 @@
-const employee={
-    name:"Sam",
-    streeAddress: "11 Broadway"};
-  let newemployee = "...employee"
-  delete employee.name;
-  //=> true
-  console.log(employee);
-  //{ streeAddress: '11 Broadway' }
- // Hint: hit control+c anytime to enter REPL.
+const employee = {
+  name : 'Woinshet',
+  streetAddress : '123 Address, United States'
+};
+
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+ return Object.assign({}, employee, {[key]:value});
+}
+
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+  employee[key]=value;
+  return employee;
+}
+
+function deleteFromEmployeeByKey(employee, key) {
+  return Object.assign({}, employee, {[key]:undefined});
+}
+
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+  delete employee[key];
+  return employee;
+}
